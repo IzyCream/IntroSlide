@@ -1,22 +1,5 @@
 <resources>
-    <string name="app_name">Intro Slider</string>
-    <string name="title_activity_welcome">Home Screen</string>
-    <string name="next">NEXT</string>
-    <string name="skip">SKIP</string>
-    <string name="start">GOT IT</string>
-
-    <string name="slide_1_title">PARIS</string>
-    <string name="slide_1_desc">Paris is a place in which we can forget!</string>
-
-    <string name="slide_2_title">LAKE</string>
-    <string name="slide_2_desc">Swiftcurrent Lake is located in the Glacier region of Glacier National Park!</string>
-
-    <string name="slide_3_title">LONDON</string>
-    <string name="slide_3_desc">London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. !</string>
-
-    <string name="slide_4_title">SWEDEN</string>
-    <string name="slide_4_desc">Sweden is a Scandinavian nation with thousands of coastal islands and inland lakes</string>
-
-    <string name="play_again_desc">Welcome slider again</string>
-    <string name="play_again">Click Again</string>
+    <string name="app_name">Live @ 500px</string>
+    <string name="open_drawer">Open Menu</string>
+    <string name="close_drawer">Close_drawer</string>
 </resources>
