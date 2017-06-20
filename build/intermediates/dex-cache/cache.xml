@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="/Users/beaubo/Desktop/project/LiveAt500px/TheCheeseLibrary/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="258da7058c10d207b6b816424ff508d6b9dabcdd">
+        <dex dex="/Users/beaubo/Desktop/project/LiveAt500px/app/build/intermediates/pre-dexed/debug/classes_5303271bb088f71523f9c6e861bbae059e12668f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/beaubo/Desktop/LiveAt500px/TheCheeseLibrary/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"

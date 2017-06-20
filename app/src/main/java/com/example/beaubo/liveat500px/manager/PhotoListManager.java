@@ -1,6 +1,7 @@
 package com.example.beaubo.liveat500px.manager;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import com.example.beaubo.liveat500px.dao.PhotoItemCollectionDao;
 import com.example.beaubo.liveat500px.dao.PhotoItemDao;
@@ -65,9 +66,6 @@ public class PhotoListManager {
     }
 
 
-
-
-
     public int getMinimumId(){
         if (dao == null)
             return 0;
@@ -88,4 +86,17 @@ public class PhotoListManager {
             return 0;
         return dao.getData().size();
     }
-}
+         public Bundle onSaveInstanceState(){
+             Bundle bundle = new Bundle();
+             bundle.putParcelable("dao", dao);
+             return  bundle;
+    }
+    public void onRestoreInstanceState(Bundle saveInstanceState){
+        dao = saveInstanceState.getParcelable("dao");
+
+
+
+    }
+
+    }
+
