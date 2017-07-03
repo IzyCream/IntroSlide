@@ -1,15 +1,18 @@
 package com.example.beaubo.liveat500px.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.view.menu.ActionMenuItemView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 import com.example.beaubo.liveat500px.R;
 import com.example.beaubo.liveat500px.adapter.PhotoListAdapter;
 import com.example.beaubo.liveat500px.dao.PhotoItemCollectionDao;
+import com.example.beaubo.liveat500px.dao.PhotoItemDao;
 import com.example.beaubo.liveat500px.datatype.MutableInteger;
 import com.example.beaubo.liveat500px.manager.HttpManager;
 import com.example.beaubo.liveat500px.manager.PhotoListManager;
@@ -33,6 +37,12 @@ import retrofit2.Response;
  * Created by nuuneoi on 11/16/2014.
  */
 public class MainFragment extends Fragment {
+
+    //Variables
+
+    public interface FragmentListener{
+        void onPhotoItemClicked(PhotoItemDao dao);
+    }
 
     ListView listView;
     PhotoListAdapter listAdapter;
@@ -94,6 +104,11 @@ public class MainFragment extends Fragment {
         listAdapter = new PhotoListAdapter(lastPositionInteger);
         listAdapter.setDao(photoListManager.getDao());
         listView.setAdapter(listAdapter);
+
+
+
+        listView.setOnItemClickListener(listViewItemClickListener);
+
 
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(pullToRefreshListener);
@@ -222,8 +237,12 @@ private void onRestoreInstanceState(Bundle savedInstanceState){
             refreshData();
         }
     };
-    AbsListView.OnScrollListener listViewScrollListener = new AbsListView.OnScrollListener() {
-        @Override
+
+
+     final AbsListView.OnScrollListener listViewScrollListener = new AbsListView.OnScrollListener() {
+
+
+         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
 
         }
@@ -243,6 +262,16 @@ private void onRestoreInstanceState(Bundle savedInstanceState){
 
                 }
             }
+        }
+    };
+
+     final AdapterView.OnItemClickListener listViewItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent = new Intent(getContext(),
+                    MoreInfoFragment.class);
+
+            startActivity(intent);
         }
     };
 
