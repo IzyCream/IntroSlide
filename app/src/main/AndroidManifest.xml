@@ -23,10 +23,9 @@
             android:name="com.example.beaubo.liveat500px.configuration.GlideConfiguration"
             android:value="GlideModule" />
 
-
-      <activity android:name=".activity.MoreInfoActivity"
-            android:theme="@style/AppThemeWithActionBar"></activity>
-
+        <activity android:name=".activity.MoreInfoActivity"
+            android:theme="@style/AppThemeWithActionBar">
+        </activity>
     </application>
 
 </manifest>
